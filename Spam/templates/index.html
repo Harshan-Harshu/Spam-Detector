@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Classifier</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <center>
+    <br>
+    <div class="container mt-5">
+        <h1 class="text-center">SMS Spam Detector</h1>
+        <form method="POST">
+            <br><br><br><br><br>
+            <div class="form-group">
+                <label for="sms">Enter SMS:</label>
+                <input type="text" class="form-control" id="sms" name="sms" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Check</button>
+        </form>
+        <br><br><br>
+        {% if result %}
+        <div class="alert alert-info mt-3">
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</center>
+</body>
+</html>
